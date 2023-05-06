@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字跳动loading</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #23303e;
+    display: flex;
+}
+
+.content {
+    margin: auto;
+    color: #FFF;
+    display: flex;
+    font-size: 80px;
+    font-weight: bolder;
+}
+.content .txt{
+    animation: animate ease 0.5s infinite alternate;
+    animation-delay: calc(var(--i) / 10 * 1s);
+}
+@keyframes animate{
+    100%{
+        color: #91c5b0;
+        filter: drop-shadow(0 0 10px #91c5b0);
+        transform: translateY(50px);
+    }
+}
+    </style>
+</head>
+<body>
+   <div class="content">
+    <div class="txt" style="--i:1">L</div>
+    <div class="txt" style="--i:2">o</div>
+    <div class="txt" style="--i:3">a</div>
+    <div class="txt" style="--i:4">d</div>
+    <div class="txt" style="--i:5">i</div>
+    <div class="txt" style="--i:6">n</div>
+    <div class="txt" style="--i:7">g</div>
+   </div>
+</body>
+</html>
