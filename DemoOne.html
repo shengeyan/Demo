@@ -1,0 +1,84 @@
+<!-- 
+    实现效果：
+        将鼠标移入图片时，会将封面图片3D旋转向后，漏出图片与标题，并进行3D放大
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            margin: 0 50px;
+            transform: translateY(-50%);
+            position: relative;
+        }
+
+        .card img {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        .feng {
+            height: 100%;
+            z-index: 1;
+        }
+        .card:hover .feng {
+            transform: perspective(500px) rotateX(25deg);
+            box-shadow: 0 35px 35px -8px rgba(0, 0, 0, 0.75);
+        }
+        .people {
+            height: 100%;
+            z-index: 2;
+            opacity: 0;
+
+        }
+        .card:hover .people {
+            opacity: 1;
+            transform: perspective(500px) translate3d(0,-50px,50px);
+        }
+        .font {
+            z-index: 3;
+            bottom: 0;
+        }
+        .card:hover .font {
+            transform: perspective(500px) translate3d(0,-25px,50px);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- <a href="https://imgse.com/i/p9A5cNj"><img src="https://s1.ax1x.com/2023/04/21/p9A5cNj.jpg" class="feng"/></a>
+        <a href="https://imgse.com/i/p9A5W3q"><img src="https://s1.ax1x.com/2023/04/21/p9A5W3q.png" class="people" /></a>
+        <a href="https://imgse.com/i/p9A56EQ"><img src="https://s1.ax1x.com/2023/04/21/p9A56EQ.png" class="font"/></a> -->
+
+        <img src="./IMG/人物.png" class="feng">
+        <img src="./IMG/1.png" class="people">
+        <img src="./IMG/YuJie Zhang.png" class="font">
+    </div>
+
+</body>
+</html>
